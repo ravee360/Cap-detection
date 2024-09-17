@@ -9,7 +9,6 @@ The model is trained on a dataset from the [Cap Dataset on Kaggle](https://www.k
 ### Annotation Conversion Process
 
 The XML annotations provided in the dataset were structured as follows:
-
 ```python
 labels_dict = dict(
     img_path=[],
@@ -20,3 +19,55 @@ labels_dict = dict(
     img_w=[],
     img_h=[]
 )
+# This structure was converted into YOLO format using the following formula for bounding box normalization:
+
+x_center = (row['xmin'] + row['xmax']) / 2 / row['img_w']
+y_center = (row['ymin'] + row['ymax']) / 2 / row['img_h']
+width = (row['xmax'] - row['xmin']) / row['img_w']
+height = (row['ymax'] - row['ymin']) / row['img_h']
+```
+This conversion ensures that the bounding box coordinates are normalized with respect to the image dimensions, which is required by the YOLO format.
+## Model Training
+The model was trained using the YOLOv8 architecture for 200 epochs. The training was done on the normalized dataset, and the following metrics were achieved:
+
+- **mAP_50** (Mean Average Precision at 50% IoU threshold): 0.82
+- **mAP_50-95** (Mean Average Precision across different IoU thresholds): 0.651
+
+The model was trained with the following key hyperparameters:
+
+- **Batch Size**: 16
+- **Learning Rate**: 0.001
+- **Epochs**: 200
+  ## Project Structure
+
+The repository contains the following files:
+
+- **`best_model.pt`**: The trained YOLOv8 model file.
+- **`python_cap_detection.py`**: Python script that uses OpenCV to load the trained model and perform real-time cap detection via webcam or video input.
+- **`requirements.txt`**: A list of Python packages required to run the project.
+
+### Python Script (`python_cap_detection.py`)
+
+This script uses OpenCV to capture frames from a webcam and runs the cap detection model in real-time. Here's how the script works:
+
+1. **Loads the YOLOv8 model** from the `.pt` file.
+2. **Captures input** either from a live webcam feed.
+3. **Performs detection** on each frame, drawing bounding boxes around detected caps.
+4. **Displays the real-time feed** with the detection results.
+
+After training, the best-performing model was saved as `best_model.pt`.
+
+## Installation
+
+### Step 1: Clone the Repository
+
+To begin, clone the repository to your local machine:
+
+```bash
+git clone https://github.com/your-username/cap-detection-yolov8.git
+cd cap-detection-yolov8
+```
+
+
+
+
