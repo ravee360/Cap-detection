@@ -8,7 +8,7 @@ This repository contains a machine learning project focused on detecting whether
 
 ## Dataset Overview
 
-The model is trained on a dataset from the [Cap Dataset on Kaggle](https://www.kaggle.com/datasets/shivanandverma/cap-dataset), which consists of 671 annotated images containing people wearing and not wearing caps. The images were pre-annotated in XML format, which was then converted to YOLO format for training.
+The model is trained on a dataset from the [Cap Dataset on Kaggle](https://www.kaggle.com/datasets/shivanandverma/cap-dataset), which consists of 671 annotated images containing people wearing caps. The images were pre-annotated in XML format, which was then converted to YOLO format for training.
 
 ### Annotation Conversion Process
 
