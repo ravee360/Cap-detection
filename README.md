@@ -36,7 +36,6 @@ The model was trained using the YOLOv8 architecture for 200 epochs. The training
 The model was trained with the following key hyperparameters:
 
 - **Batch Size**: 16
-- **Learning Rate**: 0.001
 - **Epochs**: 200
   ## Project Structure
 
@@ -64,10 +63,25 @@ After training, the best-performing model was saved as `best_model.pt`.
 To begin, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/cap-detection-yolov8.git
-cd cap-detection-yolov8
+git clone https://github.com/ravee360/Cap-detection.git
+cd cap-detection
 ```
+### Step 2: Install Dependencies
 
+Install the required Python packages listed in `requirements.txt`:
+
+```bash
+pip install -r requirements.txt
+```
+## Model Inference Process
+
+The script performs the following steps for model inference:
+
+1. **Capture Frames**: Uses the `cv2.VideoCapture` function to capture frames from the webcam.
+2. **Detection**: Each frame is passed through the YOLOv8 model to detect caps.
+3. **Output**: If a cap is detected, the model outputs bounding boxes and confidence scores.
+4. **Display**: The bounding boxes are drawn around detected caps, and the result is displayed on the screen in real-time.
+5. **Exit**: To exit the real-time detection, press `q`.
 
 
 
