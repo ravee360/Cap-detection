@@ -2,7 +2,7 @@ import cv2
 from ultralytics import YOLO
 
 # Load the YOLOv8 model
-model = YOLO('best_cap_detection_model (1).pt')  # Adjust path if needed
+model = YOLO('best.pt')  # Adjust path if needed
 
 # Initialize video capture from the webcam
 cap = cv2.VideoCapture(0)
