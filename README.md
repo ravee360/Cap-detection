@@ -2,9 +2,9 @@
 
 This repository contains a machine learning project focused on detecting whether a person is wearing a cap using a model trained on the YOLOv8 architecture. The project includes the trained model in `.pt` format, a Python script (`python_cap_detection.py`) for performing real-time detection using OpenCV, and the necessary dependencies listed in `requirements.txt`.
 
-## Kaggle notebook link
+## Colab notebook link
 
-[kaggle notebook link](https://www.kaggle.com/code/ravee360/cap-detection/edit)
+[Colab notebook link]([https://www.kaggle.com/code/ravee360/cap-detection/edit](https://colab.research.google.com/drive/1z4-jNtFHVnYyat2ZM-qiNXq5PE2livBU?authuser=1#scrollTo=D0yu4cn_ruk1))
 
 ## Dataset Overview
 
