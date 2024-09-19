@@ -1,6 +1,6 @@
 # Cap Detection using YOLOv8
 
-This repository contains the code and model for detecting whether a person is wearing a cap or not using a YOLOv8-based object detection approach. The model was trained on a dataset with 671 cap-wearing images and 529 non-cap-wearing images, for a total of 1200 images, and trained over 200 epochs.
+This repository contains the code and model for detecting whether a person is wearing a cap or not using a YOLOv8-based object detection approach. The model was trained on a dataset with 671 cap-wearing images and 529 non-cap-wearing images, for a total of 1200 images, and trained over 200 epochs. Split folder contain all the image datasets along with their annotations in Yolo format. 
 
 ## Colab notebook link
 
