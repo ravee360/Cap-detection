@@ -1,46 +1,42 @@
 # Cap Detection using YOLOv8
 
-This repository contains a machine learning project focused on detecting whether a person is wearing a cap using a model trained on the YOLOv8 architecture. The project includes the trained model in `.pt` format, a Python script (`python_cap_detection.py`) for performing real-time detection using OpenCV, and the necessary dependencies listed in `requirements.txt`.
+This repository contains the code and model for detecting whether a person is wearing a cap or not using a YOLOv8-based object detection approach. The model was trained on a dataset with 671 cap-wearing images and 529 non-cap-wearing images, for a total of 1200 images, and trained over 200 epochs.
 
 ## Colab notebook link
 
 [Colab notebook link](https://colab.research.google.com/drive/1z4-jNtFHVnYyat2ZM-qiNXq5PE2livBU?authuser=1#scrollTo=D0yu4cn_ruk1)
 
 ## Dataset Overview
+he dataset consists of:
 
-The model is trained on a dataset from the [Cap Dataset on Kaggle](https://www.kaggle.com/datasets/shivanandverma/cap-dataset), which consists of 671 annotated images containing people wearing caps. The images were pre-annotated in XML format, which was then converted to YOLO format for training.
+- **671 images of people wearing caps.
+- **529 images of people without caps.
+The dataset was split into training and validation sets for model training and evaluation. Annotations for the images were converted into YOLO format before training.
 
-### Annotation Conversion Process
-
-The XML annotations provided in the dataset were structured as follows:
-```python
-labels_dict = dict(
-    img_path=[],
-    xmin=[],
-    xmax=[],
-    ymin=[],
-    ymax=[],
-    img_w=[],
-    img_h=[]
-)
-# This structure was converted into YOLO format using the following formula for bounding box normalization:
-
-x_center = (row['xmin'] + row['xmax']) / 2 / row['img_w']
-y_center = (row['ymin'] + row['ymax']) / 2 / row['img_h']
-width = (row['xmax'] - row['xmin']) / row['img_w']
-height = (row['ymax'] - row['ymin']) / row['img_h']
-```
-This conversion ensures that the bounding box coordinates are normalized with respect to the image dimensions, which is required by the YOLO format.
 ## Model Training
 The model was trained using the YOLOv8 architecture for 200 epochs. The training was done on the normalized dataset, and the following metrics were achieved:
 
-- **mAP_50** (Mean Average Precision at 50% IoU threshold): 0.82
-- **mAP_50-95** (Mean Average Precision across different IoU thresholds): 0.651
+- Model: YOLOv8 (pre-trained on COCO dataset, fine-tuned for cap detection).
+- Epochs: 200
+- Optimizer: SGD (based on the chosen configuration).
+- Batch size: 16.
+- Input Image Size: 320x320
+- Training Script: A custom training script was used to fine-tune the YOLOv8 model on the cap detection dataset.
 
-The model was trained with the following key hyperparameters:
+##  Model Performance
+After training the model for 200 epochs, the following metrics were achieved:
 
-- **Batch Size**: 16
-- **Epochs**: 200
+- Precision: 0.954
+- Recall: 0.886
+- mAP_50: 0.937 (Mean Average Precision at 50% IoU)
+- mAP_50-95: 0.825 (Mean Average Precision across multiple IoU thresholds)
+- Fitness: 0.836
+
+ ## Speed:
+- Preprocessing Time: 0.0681 seconds
+- Inference Time: 0.9437 seconds
+- Loss Time: 0.00047 seconds
+- Postprocessing Time: 1.6046 seconds
   ## Project Structure
 
 The repository contains the following files:
