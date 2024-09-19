@@ -6,6 +6,9 @@ This repository contains the code and model for detecting whether a person is we
 
 [Colab notebook link](https://colab.research.google.com/drive/1z4-jNtFHVnYyat2ZM-qiNXq5PE2livBU?authuser=1#scrollTo=D0yu4cn_ruk1)
 
+## Demo Video
+[click here for video](https://drive.google.com/file/d/1oDOGdxqYVdmWTESD3-Uj3IMraKGSelRf/view?usp=drive_link)
+
 ## Dataset Overview
 he dataset consists of:
 
