@@ -4,7 +4,7 @@ This repository contains a machine learning project focused on detecting whether
 
 ## Colab notebook link
 
-[Colab notebook link]([https://www.kaggle.com/code/ravee360/cap-detection/edit](https://colab.research.google.com/drive/1z4-jNtFHVnYyat2ZM-qiNXq5PE2livBU?authuser=1#scrollTo=D0yu4cn_ruk1))
+[Colab notebook link]([https://www.kaggle.com/code/ravee360/cap-detection/edit](https://colab.research.google.com/drive/1z4-jNtFHVnYyat2ZM-qiNXq5PE2livBU?authuser=1#scrollTo=D0yu4cn_ruk1)
 
 ## Dataset Overview
 
